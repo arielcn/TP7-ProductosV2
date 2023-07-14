@@ -1,9 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./components/Layout";
-import Home from "./components/Home";
-import Productos from "./components/Productos";
-import Detalle from "./components/Detalle";
-import Contacto from "./components/Contacto";
+import Layout from "./pages/Layout";
+import Home from "./pages/Home";
+import Productos from "./pages/Productos";
+import Detalle from "./pages/Detalle";
+import Contacto from "./pages/Contacto";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
