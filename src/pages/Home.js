@@ -1,8 +1,8 @@
+import Carousel from "../components/Carousel";
+
 const Home = () => {
     return (
-        <div>
-            <h1>hola mundo</h1>
-        </div>
+        <Carousel></Carousel>
     );
 };
 

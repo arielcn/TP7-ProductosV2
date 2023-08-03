@@ -1,7 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-function Card(props) {
+function CardProd(props) {
     return (
         <Card style={{ width: '18rem' }}>
         <Card.Img variant="top" src="holder.js/100px180" />
@@ -17,4 +17,4 @@ function Card(props) {
     );
 }
 
-export default Card;
+export default CardProd;
