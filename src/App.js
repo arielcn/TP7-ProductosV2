@@ -7,19 +7,17 @@ import Contacto from "./pages/Contacto";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-  const [productos, setProductos] = useState([]);
-
   return (
     <div>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}></Route>
-        <Route path="/home" element={<Home />}></Route>
-        <Route path="/productos" element={<Productos productos={productos} setProductos={setProductos} />}></Route>
-        <Route path="/detalle-prod" element={<Detalle />}></Route>
-        <Route path="/contacto" element={<Contacto />} ></Route>
-      </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}></Route>
+          <Route path="/home" element={<Home />}></Route>
+          <Route path="/productos" element={<Productos />}></Route>
+          <Route path="/detalle-prod" element={<Detalle />}></Route>
+          <Route path="/contacto" element={<Contacto />} ></Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

@@ -1,17 +1,9 @@
-import Card from "../components/Card";
-import { useState, useEffect } from "react";
-import axios from "axios";
+import CardProd from "../components/Card";
 
-const Productos = (props) => {
-    useEffect(() => {
-        axios.get('https://dummyjson.com/products')
-          .then((res) => {
-            props.setProductos(res.data)
-          });
-      });
-    return (
-        <Card></Card>
-    );
+const Productos = () => {
+  return (
+    <CardProd />
+  );
 };
 
 export default Productos;

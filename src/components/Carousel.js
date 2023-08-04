@@ -1,30 +1,39 @@
-import React, { useState } from 'react';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import './Carousel.css'
 
-const Carousel = () => {
-    const [images, setImages] = useState([]);  
-    const settings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-    };
-  
-    return (
-      <div>
-        <h2>Image Carousel</h2>
-        <Slider {...settings}>
-          {images.map((image, index) => (
-            <div key={index}>
-              <img src={image} alt={`Image ${index + 1}`} />
-            </div>
-          ))}
-        </Slider>
+const Carousel = (props) => {
+
+  return (
+    <div id="carouselExample" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src={props[0].image} class="d-block w-100" alt="..."/>
+        </div>
+        <div class="carousel-item">
+          <img src={props[1].image} class="d-block w-100" alt="..."/>
+        </div>
+        <div class="carousel-item">
+          <img src={props[2].image} class="d-block w-100" alt="..."/>
+        </div>
+        <div class="carousel-item">
+          <img src={props[3].image} class="d-block w-100" alt="..."/>
+        </div>
+        <div class="carousel-item">
+          <img src={props[4].image} class="d-block w-100" alt="..."/>
+        </div>
+        <div class="carousel-item">
+          <img src={props[5].image} class="d-block w-100" alt="..."/>
+        </div>
       </div>
-    );
-  };
-  
-  export default Carousel;
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  );
+};
+
+export default Carousel;
