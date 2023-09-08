@@ -26,7 +26,7 @@ const Home = () => {
       <h1 className="text-center">Las mejores ofertas</h1>
       <Carousel productos={getRandom()} />
       <div className="row mt-5">
-        {productos.slice(0, 6).map(prod => <CardProd className='col-sm-3' producto={prod} />)}
+        {productos.slice(0, 6).map(prod => <div className='col-sm-4 mb-3' > <CardProd producto={prod} /> </div>)}
       </div>
     </div>
   );
