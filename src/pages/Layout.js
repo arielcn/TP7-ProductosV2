@@ -8,7 +8,7 @@ const Layout = () => {
         <>
             <Navbar expand="lg" className="bg-body-tertiary">
                 <Container>
-                    <Navbar.Brand as={Link} to="/home">
+                    <Navbar.Brand>
                         <img
                             src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1200px-Amazon_logo.svg.png"
                             height="50px"
@@ -19,7 +19,7 @@ const Layout = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link as={Link} to="/home">Home</Nav.Link>
+                            <Nav.Link as={Link} to="/">Home</Nav.Link>
                             <Nav.Link as={Link} to="/productos">Productos</Nav.Link>
                             <Nav.Link as={Link} to="/contacto">Contacto</Nav.Link>
                         </Nav>

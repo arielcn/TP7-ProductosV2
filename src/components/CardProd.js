@@ -12,7 +12,7 @@ function CardProd({ producto }) {
                 <Card.Text>
                     ${producto.price}
                 </Card.Text>
-                <Button as={Link} to="/detalle-prod">Comprar</Button>
+                <Button as={Link} to="/detalle-prod" producto={producto}>Comprar</Button>
             </Card.Body>
         </Card>
     );
