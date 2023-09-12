@@ -3,7 +3,6 @@ import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 
 function CardProd({ producto }) {
-
     return (
         <Card style={{height: '100%' }}>
             <Card.Img style={{ height: '100%' }} variant="top" src={producto.thumbnail} />
@@ -12,7 +11,7 @@ function CardProd({ producto }) {
                 <Card.Text>
                     ${producto.price}
                 </Card.Text>
-                <Button as={Link} to="/detalle-prod" producto={producto}>Comprar</Button>
+                <Button as={Link} to={`/detalle-prod/${producto.id}`}>Comprar</Button>
             </Card.Body>
         </Card>
     );
