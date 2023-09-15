@@ -21,6 +21,7 @@ const Detalle = (props) => {
                     <img src={producto.thumbnail} alt="imagen"></img>
                 </div>
                 <div class="col-md-6">
+                    <h1>{producto.title}</h1>
                     <h2>{producto.price}$ {producto.discountPercentage}% OFF</h2>
                     <Rating style={{ display: 'flex' }} cancel={false} value={producto.rating} stars={5} />
                 </div>
