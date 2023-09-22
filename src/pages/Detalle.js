@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Rating } from 'primereact/rating';
 import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Detalle = (props) => {
     const { prodId } = useParams();
@@ -30,7 +31,7 @@ const Detalle = (props) => {
                     <p>{producto.description}</p>
                     <h2><del>${producto.price}</del> ${precioDescuento} {producto.discountPercentage}% OFF</h2>
                     <Rating style={{ display: 'flex' }} cancel={false} value={producto.rating} stars={5} />
-                    <Button className="mt-4 me-3"><b>Comprar</b></Button>
+                    <Button as={Link} to={`/detalle-prod/${producto.id}`} className="mt-4 me-3"><b>Comprar</b></Button>
                     <Button className="mt-4" variant="outline-warning"><b>Agregar al carrito</b></Button>
                 </div>
             </div>
