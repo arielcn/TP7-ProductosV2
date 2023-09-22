@@ -11,7 +11,7 @@ const Productos = () => {
   const [productos, setProductos] = useState([]);
   const [buscar, setBuscar] = useState("");
   const [categorias, setCategorias] = useState([]);
-  const limit = 100;
+  const limit = 30;
 
   useEffect(() => {
     axios.get(`https://dummyjson.com/products?limit=${limit}`)
