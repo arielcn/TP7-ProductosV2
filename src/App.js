@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Productos from "./pages/Productos";
 import Detalle from "./pages/Detalle";
 import Contacto from "./pages/Contacto";
+import Carrito from "./pages/Carrito";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route path="/productos" element={<Productos />}></Route>
           <Route path="/detalle-prod/:prodId" element={<Detalle />}></Route>
           <Route path="/contacto" element={<Contacto />} ></Route>
+          <Route path="/carrito" element={<Carrito />} ></Route>
           <Route path="*" element={<h1 className="text-center mt-5">404 page not found</h1>}></Route>
         </Route>
       </Routes>

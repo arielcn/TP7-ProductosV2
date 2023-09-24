@@ -22,6 +22,7 @@ const Layout = () => {
                             <Nav.Link as={Link} to="/">Home</Nav.Link>
                             <Nav.Link as={Link} to="/productos">Productos</Nav.Link>
                             <Nav.Link as={Link} to="/contacto">Contacto</Nav.Link>
+                            <Nav.Link as={Link} to="/carrito"><img width='50px' src="https://static.vecteezy.com/system/resources/previews/011/187/829/non_2x/shopping-cart-icon-vector.jpg"></img></Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

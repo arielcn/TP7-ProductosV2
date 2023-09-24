@@ -18,7 +18,7 @@ const Detalle = (props) => {
     })
 
     let precioDescuento = (producto.price * producto.discountPercentage) / 100;
-    precioDescuento = producto.price - precioDescuento;
+    precioDescuento = Math.ceil(producto.price - precioDescuento);
 
     return (
         <div className="container mt-5">
