@@ -24,15 +24,15 @@ const Detalle = (props) => {
         <div className="container mt-5">
             <div className="row">
                 <div class="col-md-6">
-                    <img src={producto.thumbnail} alt="imagen"></img>
+                    <img src={producto.thumbnail} alt="imagen" width={'100%'}></img>
                 </div>
                 <div class="col-md-6 bg-light">
                     <h1>{producto.title}</h1>
                     <p>{producto.description}</p>
                     <h2><del>${producto.price}</del> ${precioDescuento} {producto.discountPercentage}% OFF</h2>
-                    <Rating style={{ display: 'flex' }} cancel={false} value={producto.rating} stars={5} />
+                    <Rating style={{ display: 'flex', color: '#f0d614' }} cancel={false} value={producto.rating} stars={5}/>
                     <Button as={Link} to={`/detalle-prod/${producto.id}`} className="mt-4 me-3"><b>Comprar</b></Button>
-                    <Button className="mt-4" variant="outline-warning"><b>Agregar al carrito</b></Button>
+                    <Button as={Link} to={`/carrito`} className="mt-4" variant="outline-warning"><b>Añadir al carrito</b></Button>
                 </div>
             </div>
         </div>

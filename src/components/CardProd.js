@@ -14,7 +14,7 @@ function CardProd({ producto }) {
                 <Card.Text>
                     ${producto.price}
                 </Card.Text>
-                <Button as={Link} to={`/detalle-prod/${producto.id}`}>Comprar</Button>
+                <Button as={Link} to={`/detalle-prod/${producto.id}`} className='me-1'>Comprar</Button>
                 <Button onClick={ () => {context.anadirAlCarrito(producto)}}>Añadir al carrito</Button>
             </Card.Body>
         </Card>

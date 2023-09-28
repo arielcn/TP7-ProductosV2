@@ -2,8 +2,6 @@ import './Carousel.css'
 
 const Carousel = (props) => {
 
-  console.log(props);
-
   if (props.productos.length === 0) return (<></>);
 
   return (

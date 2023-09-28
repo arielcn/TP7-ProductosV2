@@ -36,6 +36,9 @@ const Productos = () => {
 
   const filtrarCat = (cat) => {
     axios.get('https://dummyjson.com/products/category/' + cat)
+      .then((res) => {
+        setProductos(res.data.products)
+      })
   }
 
   return (
@@ -59,7 +62,7 @@ const Productos = () => {
         </div>
         <div className="col-md-1">
           <NavDropdown className="mb-5" title="Categorías" id="basic-nav-dropdown">
-            {categorias.map(cat => <NavDropdown.Item onClick={filtrarCat(cat)}>{cat}</NavDropdown.Item>
+            {categorias.map(cat => <NavDropdown.Item onClick={() =>filtrarCat(cat)}>{cat}</NavDropdown.Item>
             )}
           </NavDropdown>
         </div>

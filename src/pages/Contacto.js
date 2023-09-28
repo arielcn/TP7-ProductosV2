@@ -1,7 +1,7 @@
 const Contacto = () => {
     return (
         <div class="container py-4">
-
+            <h1 className="text-center mb-5">Formulario de contacto</h1>
             <form id="contactForm">
 
                 <div class="mb-3">
