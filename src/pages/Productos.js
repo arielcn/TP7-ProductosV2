@@ -11,15 +11,16 @@ const Productos = () => {
   const [productos, setProductos] = useState([]);
   const [buscar, setBuscar] = useState("");
   const [categorias, setCategorias] = useState([]);
-  const limit = 30;
+  const limit = 18;
+  const skip = 9
 
   useEffect(() => {
     axios.get(`https://dummyjson.com/products?limit=${limit}`)
       .then((res) => {
         setProductos(res.data.products)
       });
-    
-      axios.get('https://dummyjson.com/products/categories')
+
+    axios.get('https://dummyjson.com/products/categories')
       .then((res) => {
         setCategorias(res.data)
       })
@@ -29,10 +30,23 @@ const Productos = () => {
     e.preventDefault();
     axios.get('https://dummyjson.com/products/search?q=' + buscar)
       .then((res) => {
-        console.log("hola")
         setProductos(res.data.products)
       })
   };
+
+  const skipearProd = () => {
+    axios.get(`https://dummyjson.com/products?skip=${skip}&limit=${limit}`)
+      .then((res) => {
+        setProductos(res.data.products)
+      })
+  }
+
+  const volverSkip = () => {
+    axios.get(`https://dummyjson.com/products?skip=-${skip}&limit=${limit}`)
+      .then((res) => {
+        setProductos(res.data.products)
+      })
+  }
 
   const filtrarCat = (cat) => {
     axios.get('https://dummyjson.com/products/category/' + cat)
@@ -43,7 +57,7 @@ const Productos = () => {
 
   return (
     <div className="container mt-5">
-      <div className="row mb-5">
+      <div className="row">
         <div className="col-md-11">
           <Form onSubmit={buscarProd}>
             <Row>
@@ -58,12 +72,13 @@ const Productos = () => {
                 <Button variant="warning" type="submit">Buscar</Button>
               </Col>
             </Row>
+            <ion-icon size='large' name="arrow-back-outline" onClick={() => { volverSkip() }}></ion-icon>
+            <ion-icon size='large' name="arrow-forward-outline" className='float-end' onClick={() => { skipearProd() }}></ion-icon>
           </Form>
         </div>
         <div className="col-md-1">
           <NavDropdown className="mb-5" title="Categorías" id="basic-nav-dropdown">
-            {categorias.map(cat => <NavDropdown.Item onClick={() =>filtrarCat(cat)}>{cat}</NavDropdown.Item>
-            )}
+            {categorias.map(cat => <NavDropdown.Item onClick={() => filtrarCat(cat)}>{cat}</NavDropdown.Item>)}
           </NavDropdown>
         </div>
       </div>
@@ -74,6 +89,8 @@ const Productos = () => {
           productos.map(prod => <div className="mb-3 col-sm-4"><CardProd producto={prod} /></div>)
         }
       </div>
+      <ion-icon size='large' name="arrow-back-outline" onClick={() => { volverSkip() }}></ion-icon>
+      <ion-icon size='large' name="arrow-forward-outline" className='float-end' onClick={() => { skipearProd() }}></ion-icon>
     </div>
   );
 };

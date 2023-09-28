@@ -13,12 +13,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   const [carrito, setCarrito] = useState([]);
 
-  function anadirAlCarrito(producto) {
+  /*function anadirAlCarrito(producto) {
     setCarrito(producto)
-  };
+  };*/
 
   return (
-    <CarritoContext.Provider value={anadirAlCarrito}>
+    <CarritoContext.Provider value={{carrito, setCarrito}}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
