@@ -9,7 +9,7 @@ const Carrito = () => {
         <div className="container mt-5">
             <h1 className="text-center">Carrito</h1>
             <div className="row">
-                {condicion ? carrito.map(prod => <div className="mb-3 col-sm-4"><CardProd producto={prod} /></div>) : falso}
+                {carrito.length > 0 ? carrito.map(prod => <div className="mb-3 col-sm-4"><CardProd producto={prod} /></div>) : <h1>Tu carrito está vacio...</h1>}
             </div>
         </div>
     )

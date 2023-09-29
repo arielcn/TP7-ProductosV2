@@ -12,7 +12,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const [carrito, setCarrito] = useState([]);
-
   /*function anadirAlCarrito(producto) {
     setCarrito(producto)
   };*/
