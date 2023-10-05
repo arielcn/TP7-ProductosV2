@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./pages/Layout";
 import Home from "./pages/Home";
@@ -15,9 +15,20 @@ function App() {
   /*function anadirAlCarrito(producto) {
     setCarrito(producto)
   };*/
+  useEffect(() => {
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+  }, [carrito]);
+
+  useEffect(() => {
+    let cart = localStorage.getItem('carrito');
+
+    if (cart) {
+      setCarrito(JSON.parse(cart));
+    }
+  },[]);
 
   return (
-    <CarritoContext.Provider value={{carrito, setCarrito}}>
+    <CarritoContext.Provider value={{ carrito, setCarrito }}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
