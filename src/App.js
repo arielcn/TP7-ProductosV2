@@ -11,21 +11,13 @@ import { CarritoContext } from "./context/carritoContext";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-  const [carrito, setCarrito] = useState([]);
-  /*function anadirAlCarrito(producto) {
-    setCarrito(producto)
-  };*/
+  let cart = localStorage.getItem('carrito');
+  
+  const [carrito, setCarrito] = useState(cart ? JSON.parse(cart) : []);
+
   useEffect(() => {
     localStorage.setItem('carrito', JSON.stringify(carrito));
   }, [carrito]);
-
-  useEffect(() => {
-    let cart = localStorage.getItem('carrito');
-
-    if (cart) {
-      setCarrito(JSON.parse(cart));
-    }
-  },[]);
 
   return (
     <CarritoContext.Provider value={{ carrito, setCarrito }}>

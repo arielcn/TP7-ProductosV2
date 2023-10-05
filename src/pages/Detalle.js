@@ -43,9 +43,8 @@ const Detalle = (props) => {
                     <p>Marca: {producto.brand}</p>
                     <h2><del>${producto.price}</del> ${precioDescuento} {producto.discountPercentage}% OFF</h2>
                     <Rating style={{ display: 'flex', color: '#f0d614' }} cancel={false} value={producto.rating} stars={5}/>
-                    <Button as={Link} to={'/check-out'} className="mt-4 me-3"><b>Comprar</b></Button>
+                    <Button variant="success" as={Link} to={'/check-out'} className="mt-4 me-3"><b>Comprar</b></Button>
                     <Button as={Link} to={'/carrito'} onClick={() => {anadirAlCarrito(producto)}} className="mt-4" variant="outline-warning"><b>Añadir al carrito</b></Button>
-                    <Button onClick={ () => {borrar(producto)}}>Borrar del carrito</Button>
                 </div>
             </div>
         </div>

@@ -10,10 +10,6 @@ function CardProd({ producto }) {
     const anadirAlCarrito = (producto) => {
         setCarrito([...carrito, producto]);
     }
-    const borrar = (producto) => {
-        const carritoNuevo = carrito.filter(p => p.id !== producto.id);
-        setCarrito(carritoNuevo);
-    }
 
     return (
         <Card style={{height: '100%' }}>
@@ -25,7 +21,6 @@ function CardProd({ producto }) {
                 </Card.Text>
                 <Button as={Link} to={`/detalle-prod/${producto.id}`} className='me-1'>Comprar</Button>
                 <Button onClick={ () => {anadirAlCarrito(producto)}} className='me-1'>Añadir al carrito</Button>
-                <Button onClick={ () => {borrar(producto)}} className='btnBorrar'>Borrar del carrito</Button>
             </Card.Body>
         </Card>
     );
